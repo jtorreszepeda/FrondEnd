@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réplica de Hoja de Referencia HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados adicionales si son necesarios */
+        body {
+            font-family: 'Arial', sans-serif; /* Fuente similar a la imagen */
+            background-color: #e0e0e0; /* Color de fondo gris claro similar */
+        }
+        .code-tag { background-color: #c8e6c9; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #a5d6a7; }
+        .code-attr { background-color: #bbdefb; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #90caf9; }
+        .code-value { background-color: #fff9c4; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #fff59d; }
+        .code-comment { color: #007700; font-style: italic; }
+        .section-title {
+            background-color: #616161; /* Gris oscuro */
+            color: white;
+            padding: 4px 8px;
+            font-weight: bold;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem; /* Tamaño de fuente ajustado */
+        }
+         .section-title-alt {
+            background-color: #78909c; /* Gris azulado */
+            color: white;
+            padding: 4px 8px;
+            font-weight: bold;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            align-items: center;
+             font-size: 0.9rem; /* Tamaño de fuente ajustado */
+        }
+        .section-content {
+            background-color: #f5f5f5; /* Gris muy claro */
+            padding: 8px;
+            border: 1px solid #bdbdbd; /* Borde gris */
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            font-size: 0.8rem; /* Tamaño de fuente ajustado para contenido */
+            line-height: 1.4; /* Espaciado de línea */
+        }
+        .icon { /* Estilo simple para los iconos */
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #ffcc80; /* Naranja claro */
+            margin-right: 5px;
+            border: 1px solid #ffa726; /* Naranja */
+        }
+        .highlight {
+             background-color: #ffe0b2; /* Naranja muy claro */
+             padding: 0 2px;
+             border-radius: 2px;
+        }
+         .sub-section {
+            margin-top: 8px;
+            border-left: 3px solid #90a4ae; /* Borde izquierdo gris azulado */
+            padding-left: 6px;
+        }
+        .sub-section-title {
+            font-weight: bold;
+            color: #546e7a; /* Gris azulado oscuro */
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <div class="container mx-auto bg-white p-4 rounded shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <div class="space-y-4">
+                <section>
+                    <div class="section-title"><span class="icon"></span>HTML Syntax <span class="ml-auto text-xs font-normal">Tag structure</span></div>
+                    <div class="section-content">
+                        <code class="block bg-gray-200 p-2 rounded text-sm">
+                            &lt;<span class="code-tag">tag</span> <span class="code-attr">attribute</span>="<span class="code-value">value</span>"&gt; content &lt;/<span class="code-tag">tag</span>&gt;
+                        </code>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title"><span class="icon"></span>Document tags <span class="ml-auto text-xs font-normal">HTML main structure</span></div>
+                    <div class="section-content">
+                        <p><code class="code-tag">&lt;!DOCTYPE html&gt;</code> HTML5 document</p>
+                        <p><code class="code-tag">&lt;html&gt;</code> document content root tag</p>
+                        <p><code class="code-tag">&lt;head&gt;</code> metadata header related docs</p>
+                        <p><code class="code-tag">&lt;body&gt;</code> page content visible content</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title"><span class="icon"></span>Global Attributes <span class="ml-auto text-xs font-normal">for all elements</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                             <div class="sub-section-title">DOM / STYLE ATTRIBUTES</div>
+                             <p><code class="code-attr">id</code> element identifier <span class="highlight">unique per page</span></p>
+                             <p><code class="code-attr">class</code> element class <span class="highlight">multiple per page</span></p>
+                             <p><code class="code-attr">slot</code> element slot reference to <code class="code-tag">&lt;slot&gt;</code></p>
+                             <p><code class="code-attr">style</code> inline CSS styles <span class="highlight">css properties</span></p>
+                        </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">GLOBAL ATTRIBUTES</div>
+                             <p><code class="code-attr">accesskey</code> shortcut key to focus</p>
+                             <p><code class="code-attr">contenteditable</code> allow edit element</p>
+                             <p><code class="code-attr">dir</code> <code class="code-value">ltr|rtl|auto</code> text direction</p>
+                             <p><code class="code-attr">draggable</code> <code class="code-value">auto</code> enable drag and drop</p>
+                             <p><code class="code-attr">hidden</code> hide element <span class="highlight">not relevant</span></p>
+                             <p><code class="code-attr">is</code> <code class="code-value">custom-elem</code> custom built-in elem</p>
+                             <p><code class="code-attr">lang</code> <code class="code-value">code</code> set content lang <span class="highlight">en, es, fr...</span></p>
+                             <p><code class="code-attr">nonce</code> <code class="code-value">hash</code> whitelist script/style <span class="highlight">(CSP)</span></p>
+                             <p><code class="code-attr">spellcheck</code> disable grammar check</p>
+                             <p><code class="code-attr">tabindex</code> <code class="code-value">num</code> set element order</p>
+                             <p><code class="code-attr">title</code> set tooltip text <span class="highlight">mouse hover</span></p>
+                             <p><code class="code-attr">translate</code> <code class="code-value">yes|no</code> disable translation</p>
+                             <p><code class="code-attr">data-*</code> custom metadata on element</p>
+                        </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">HINT TO BROWSER</div>
+                              <p><code class="code-attr">enterkeyhint</code> <code class="code-value">enter|done|go|search...</code></p>
+                              <p><code class="code-attr">inputmode</code> <code class="code-value">none|text|tel|url|email...</code></p>
+                        </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">MICRODATA ATTRIBUTES</div>
+                              <p><code class="code-attr">itemid</code> set global <span class="highlight">urn unique identifier</span></p>
+                              <p><code class="code-attr">itemscope</code> new metadata item</p>
+                              <p><code class="code-attr">itemtype</code> set microdata genre <span class="highlight">url</span></p>
+                              <p><code class="code-attr">itemref</code> <code class="code-value">id list</code> set reference to "id"</p>
+                              <p><code class="code-attr">itemprop</code> <code class="code-value">token</code> Set property & value</p>
+                         </div>
+                    </div>
+                </section>
+
+                 <section>
+                    <div class="section-title"><span class="icon"></span>Inline Styling <span class="ml-auto text-xs font-normal">CSS inline</span></div>
+                    <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">INLINE STYLES</div>
+                             <p><code class="code-tag">&lt;style&gt;</code> embed css style in a document</p>
+                             <p><code class="code-attr">title</code> set title to stylesheet set</p>
+                             <p><code class="code-attr">type</code> mime hint type for browser</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">SOURCE STYLE</div>
+                              <p><code class="code-attr">media</code> apply to specific devices</p>
+                              <p class="ml-4"><code class="code-value">all</code> all devices <span class="highlight">computers, mobiles...</span></p>
+                              <p class="ml-4"><code class="code-value">print</code> printables devices</p>
+                              <p class="ml-4"><code class="code-value">screen</code> all devices (<span class="highlight">print + speech</span>)</p>
+                              <p class="ml-4"><code class="code-value">speech</code> devices that read a page</p>
+                         </div>
+                    </div>
+                </section>
+
+                 <section>
+                    <div class="section-title-alt"><span class="icon"></span>CHEATSHEET LEGEND</div>
+                    <div class="section-content">
+                        <p><code class="code-tag">html tag</code> html tag <code class="code-tag">w/o close tag</code> <span class="text-red-500 line-through">obsolete</span></p>
+                        <p><code class="code-attr">attribute</code> attribute <code class="code-attr">w/o value</code></p>
+                        <p><code class="code-value">value</code> default value <code class="code-value">values set</code></p>
+                        <p><code class="code-value">value for content</code> value part</p>
+                    </div>
+                 </section>
+
+            </div>
+
+            <div class="space-y-4">
+                 <section>
+                    <div class="section-title"><span class="icon"></span>Comment Syntax <span class="ml-auto text-xs font-normal">Dev annotations</span></div>
+                    <div class="section-content">
+                        <code class="block bg-gray-200 p-2 rounded text-sm code-comment">
+                            &lt;!-- text without effects on webpage --&gt;
+                        </code>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title"><span class="icon"></span>Head tags <span class="ml-auto text-xs font-normal">Header & document metadata</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                             <div class="sub-section-title">RELATIONED DOCS</div>
+                             <p><code class="code-tag">&lt;link&gt;</code> document relation</p>
+                             <p class="ml-4"><code class="code-attr">href</code> link to related document</p>
+                             <p class="ml-4"><code class="code-attr">hreflang</code> <code class="code-value">code</code> doc language <span class="highlight">en, es...</span></p>
+                             <p class="ml-4"><code class="code-attr">type</code> mime hint type for browser</p>
+                             <p class="ml-4"><code class="code-attr">title</code> set title to stylesheet set</p>
+                             <p class="ml-4"><code class="code-attr">sizes</code> hint size for favicon <span class="highlight">64x64, 96x96</span></p>
+                             <p class="ml-4"><code class="code-attr">rel</code> Relation type <span class="highlight">with other document</span></p>
+                             <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">alternate</code></div><div>link to alternate version</div>
+                                 <div><code class="code-value">author</code></div><div>link to author URL</div>
+                                 <div><code class="code-value">help</code></div><div>link to help URL</div>
+                                 <div><code class="code-value">icon</code></div><div>link to favicon URL (tab icon)</div>
+                                 <div><code class="code-value">license</code></div><div>fetch module map</div>
+                                 <div><code class="code-value">pingback</code></div><div>link to pingback server</div>
+                                 <div><code class="code-value">search</code></div><div>link to search page url</div>
+                                 <div><code class="code-value">stylesheet</code></div><div>Imports a css style sheet</div>
+                             </div>
+                        </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">URL STRUCTURE RELATION</div>
+                              <p class="ml-4"><code class="code-attr">rel</code> Relation type</p>
+                              <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">canonical</code></div><div>link to preferred URL</div>
+                                 <div><code class="code-value">prev</code></div><div>prev part URL of series doc</div>
+                                 <div><code class="code-value">next</code></div><div>next part URL of series doc</div>
+                              </div>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">HINT TO BROWSER</div>
+                              <p class="ml-4"><code class="code-attr">rel</code> Relation type</p>
+                              <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">dns-prefetch</code></div><div>resolve dns domain</div>
+                                 <div><code class="code-value">preconnect</code></div><div>pre connect to domain</div>
+                                 <div><code class="code-value">prefetch</code></div><div>fetch/cache link for future</div>
+                                 <div><code class="code-value">preload</code></div><div>fetch/cache link for now</div>
+                                 <div><code class="code-value">modulepreload</code></div><div>fetch module map</div>
+                                 <div><code class="code-value">prerender</code></div><div>background render page</div>
+                             </div>
+                             <p class="ml-4"><code class="code-attr">as</code> <code class="code-value">script|font|image|audio|video|fetch...</code></p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">DOCUMENT METADATA</div>
+                              <p><code class="code-tag">&lt;meta&gt;</code> document metadata</p>
+                              <p class="ml-4"><code class="code-attr">charset</code> encoding <span class="highlight">utf-8, iso-8859-1...</span></p>
+                              <p class="ml-4"><code class="code-attr">name</code> name of metadata</p>
+                              <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                  <div><code class="code-value">application-name</code></div><div>short webapp name</div>
+                                  <div><code class="code-value">author</code></div><div>name of the page's author</div>
+                                  <div><code class="code-value">description</code></div><div>seo page description</div>
+                                  <div><code class="code-value">generator</code></div><div>software used to build web</div>
+                                  <div><code class="code-value">keywords</code></div><div>comma-separated tags</div>
+                                  <div><code class="code-value">referrer</code></div><div>default page referrer policy</div>
+                                  <div><code class="code-value">theme-color</code></div><div>primary theme css color</div>
+                                  <div><code class="code-value">viewport</code></div><div>hint to initial size viewport</div>
+                              </div>
+                               <p class="ml-4"><code class="code-attr">http-equiv</code> pragma directive <span class="highlight">(legacy)</span></p>
+                               <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                   <div><code class="code-value">content-type</code></div><div>legacy alt. to charset</div>
+                                   <div><code class="code-value">default-style</code></div><div>default stylesheet set</div>
+                                   <div><code class="code-value">refresh</code></div><div>html redirect <span class="highlight">10; URL=file.html</span></div>
+                                   <div><code class="code-value">x-ua-compatible</code></div><div>better compat <span class="highlight">(IE=edge)</span></div>
+                                   <div><code class="code-value">content-security-policy</code></div><div>enforce csp</div>
+                               </div>
+                               <p class="ml-4"><code class="code-attr">content</code> metadata value</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">DOCUMENT TITLE</div>
+                             <p><code class="code-tag">&lt;title&gt;</code> seo document title</p>
+                         </div>
+                          <div class="sub-section">
+                             <div class="sub-section-title">BASE URL</div>
+                             <p><code class="code-tag">&lt;base&gt;</code> set a document base url</p>
+                             <p class="ml-4"><code class="code-attr">href</code> link to base url to use</p>
+                             <p class="ml-4"><code class="code-attr">target</code> context place to open link</p>
+                         </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="space-y-4">
+                 <section>
+                    <div class="section-title-alt"><span class="icon"></span>Social metadata <span class="ml-auto text-xs font-normal">For social networks</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                             <div class="sub-section-title">FACEBOOK OPEN GRAPH</div>
+                             <p><code class="code-tag">&lt;meta&gt;</code> metadata tag for open graph</p>
+                             <p class="ml-4"><code class="code-attr">property</code> metadata type <span class="highlight">open graph</span></p>
+                             <p class="ml-4"><code class="code-attr">content</code> metadata value <span class="highlight">open graph</span></p>
+
+                             <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">og:title</code></div><div>title of your object</div>
+                                 <div><code class="code-value">og:type</code></div><div>type of your object</div>
+                                 <div class="col-span-2 ml-4"><span class="highlight">music video article book profile website</span></div>
+                                 <div><code class="code-value">og:image</code></div><div>image url for preview</div>
+                                 <div><code class="code-value">og:url</code></div><div>canonical & absolute url</div>
+                                 <div><code class="code-value">og:audio</code></div><div>complementary audio url</div>
+                                 <div><code class="code-value">og:description</code></div><div>1-2 sentence descr.</div>
+                                 <div><code class="code-value">og:determiner</code></div><div>word <span class="highlight">auto, the, a, an...</span></div>
+                                 <div><code class="code-value">og:locale</code></div><div>language <span class="highlight">default: en_US</span></div>
+                                 <div><code class="code-value">og:locale:alternative</code></div><div>others lang <span class="highlight">array</span></div>
+                                 <div><code class="code-value">og:site_name</code></div><div>general site name</div>
+                                 <div><code class="code-value">og:video</code></div><div>complementary video url</div>
+                             </div>
+                        </div>
+                        <div class="sub-section">
+                             <div class="sub-section-title">TWITTER CARDS</div>
+                             <p><code class="code-tag">&lt;meta&gt;</code> metadata tag for twitter cards</p>
+                             <p class="ml-4"><code class="code-attr">name</code> metadata type <span class="highlight">twitter cards</span></p>
+                             <p class="ml-4"><code class="code-attr">content</code> metadata value <span class="highlight">twitter cards</span></p>
+                              <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">twitter:title</code></div><div>title of your object</div>
+                                 <div><code class="code-value">twitter:card</code></div><div>type of your object</div>
+                                  <div class="col-span-2 ml-4"><span class="highlight">summary, summary_large_image, app, player</span></div>
+                                 <div><code class="code-value">twitter:site</code></div><div>account site name</div>
+                                 <div><code class="code-value">twitter:creator</code></div><div>account name <span class="highlight">@manz</span></div>
+                                 <div><code class="code-value">twitter:description</code></div><div>description</div>
+                                 <div><code class="code-value">twitter:image</code></div><div>absolute image url</div>
+                              </div>
+                        </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">APP PROPERTIES</div>
+                              <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">twitter:app:country</code></div><div>country code</div>
+                                 <div><code class="code-value">twitter:app:name:*</code></div><div>name of app</div>
+                                 <div><code class="code-value">twitter:app:id:*</code></div><div>identifier of app</div>
+                                 <div><code class="code-value">twitter:app:url:*</code></div><div>url of app store</div>
+                                 <div class="col-span-2 ml-4"><span class="highlight">iphone | ipad | googleplay</span> id for ****</div>
+                              </div>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">PLAYER PROPERTIES</div>
+                              <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">twitter:player</code></div><div>https url to iframe player</div>
+                              </div>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">GOOGLE SEO RECOMMENDATIONS</div>
+                              <p><code class="code-tag">&lt;title&gt;</code> first - second | brand <span class="highlight">50-60 chars</span></p>
+                              <p><code class="code-tag">&lt;meta&gt;</code> metadata google-supported</p>
+                              <p class="ml-4"><code class="code-attr">name</code> metadata name</p>
+                               <div class="grid grid-cols-2 gap-x-2 ml-6 mt-1">
+                                 <div><code class="code-value">description</code></div><div>text snippet <span class="highlight">50-160 chars</span></div>
+                                 <div><code class="code-value">robots | googlebot</code></div><div>set bots behaviour</div>
+                                 <div class="col-span-2 ml-4"><span class="highlight">all | noindex | nofollow | none noarchive | nosnippet | noodp notranslate | noimageindex unavailable_after: date</span></div>
+                                 <div><code class="code-value">google</code></div><div>disable google features</div>
+                                 <div class="col-span-2 ml-4"><span class="highlight">notranslate | nositelinkssearchbox</span></div>
+                                 <div><code class="code-value">rating</code></div><div><span class="highlight">adult</span> exclude secure search</div>
+                                 <div><code class="code-value">viewport</code></div><div>optimized-mobile page</div>
+                                 <div class="ml-4"><code class="code-attr">content</code> <span class="highlight">"width=device-width, initial-scale=1.0"</span></div>
+                              </div>
+                         </div>
+                    </div>
+                </section>
+                 <div class="text-right mt-4 pr-2">
+                    <span class="text-lg font-bold text-gray-700">Emezeta.com</span>
+                 </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

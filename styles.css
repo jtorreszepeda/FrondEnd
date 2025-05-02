@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    border: 1px solid #444;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    background-color: #333;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.section-subheader {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 3px 8px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.section-content {
+    padding: 8px;
+}
+
+/* Colores específicos para cada sección */
+#html-syntax .section-header {
+    background-color: #007acc;
+}
+
+#tag-structure .section-header {
+    background-color: #007acc;
+}
+
+#social-metadata .section-header {
+    background-color: #673ab7;
+}
+
+#twitter-cards .section-header {
+    background-color: #1DA1F2;
+}
+
+#document-tags .section-header {
+    background-color: #8abe06;
+}
+
+#head-tags .section-header {
+    background-color: #ff9800;
+}
+
+#document-relation .section-header {
+    background-color: #2196f3;
+}
+
+#global-attributes .section-header {
+    background-color: #4caf50;
+}
+
+#inline-styling .section-header {
+    background-color: #9c27b0;
+}
+
+#comment-syntax .section-header {
+    background-color: #2196f3;
+}
+
+/* Estilos para las etiquetas y atributos */
+.code-block {
+    background-color: #f8f8f8;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 1em;
+}
+
+.meta-tag, .doctype-tag, .html-tag, .head-tag, .body-tag, .attribute, .tag-item, .style-example {
+    margin-bottom: 4px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tag-label, .attr-label, .tag-name, .style-label {
+    background-color: #4caf50;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-size: 0.85em;
+    font-family: monospace;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+}
+
+.tag-desc, .attr-desc, .tag-info, .style-desc {
+    font-size: 0.85em;
+    color: #555;
+}
+
+.comment-example {
+    background-color: #f5f5f5;
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #555;
+    border: 1px solid #eee;
+}
+
+.comment-text {
+    color: #008000;
+}
+
+/* Estilos específicos para diferentes etiquetas */
+.doctype-tag .tag-label {
+    background-color: #8abe06;
+}
+
+.html-tag .tag-label {
+    background-color: #ff7700;
+}
+
+.head-tag .tag-label {
+    background-color: #cc5200;
+}
+
+.body-tag .tag-label {
+    background-color: #ee9900;
+}
+
+/* Tag structure */
+.tag-item .tag-name {
+    background-color: #007acc;
+}
+
+/* Social metadata */
+#social-metadata .tag-label {
+    background-color: #673ab7;
+}
+
+/* Twitter cards */
+#twitter-cards .tag-label {
+    background-color: #1DA1F2;
+}
+
+/* Document relation */
+#document-relation .tag-label {
+    background-color: #2196f3;
+}
+
+/* Global attributes */
+#global-attributes .attr-label {
+    background-color: #4caf50;
+}
+
+/* Inline styling */
+.style-label {
+    background-color: #9c27b0;
+}
+
+/* Credits */
+.credits {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.credits a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+} 
