@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réplica de Hoja de Referencia HTML</title>
+    <title>Réplica de Hoja de Referencia HTML Completa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Estilos personalizados adicionales si son necesarios */
+        /* Estilos personalizados */
         body {
-            font-family: 'Arial', sans-serif; /* Fuente similar a la imagen */
-            background-color: #e0e0e0; /* Color de fondo gris claro similar */
+            font-family: 'Arial', sans-serif;
+            background-color: #e0e0e0; /* Gris claro para el fondo general */
         }
-        .code-tag { background-color: #c8e6c9; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #a5d6a7; }
-        .code-attr { background-color: #bbdefb; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #90caf9; }
-        .code-value { background-color: #fff9c4; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #fff59d; }
+        .code-tag { background-color: #c8e6c9; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #a5d6a7; display: inline-block; }
+        .code-attr { background-color: #bbdefb; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #90caf9; display: inline-block; }
+        .code-value { background-color: #fff9c4; padding: 1px 3px; border-radius: 3px; font-family: monospace; border: 1px solid #fff59d; display: inline-block; }
         .code-comment { color: #007700; font-style: italic; }
         .section-title {
             background-color: #616161; /* Gris oscuro */
@@ -23,7 +23,7 @@
             border-radius: 4px 4px 0 0;
             display: flex;
             align-items: center;
-            font-size: 0.9rem; /* Tamaño de fuente ajustado */
+            font-size: 0.9rem;
         }
          .section-title-alt {
             background-color: #78909c; /* Gris azulado */
@@ -33,7 +33,7 @@
             border-radius: 4px 4px 0 0;
             display: flex;
             align-items: center;
-             font-size: 0.9rem; /* Tamaño de fuente ajustado */
+             font-size: 0.9rem;
         }
         .section-content {
             background-color: #f5f5f5; /* Gris muy claro */
@@ -41,27 +41,36 @@
             border: 1px solid #bdbdbd; /* Borde gris */
             border-top: none;
             border-radius: 0 0 4px 4px;
-            font-size: 0.8rem; /* Tamaño de fuente ajustado para contenido */
-            line-height: 1.4; /* Espaciado de línea */
+            font-size: 0.8rem;
+            line-height: 1.4;
+            /* Asegura que el contenido no desborde si es muy largo */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .icon { /* Estilo simple para los iconos */
             display: inline-block;
             width: 12px;
             height: 12px;
-            background-color: #ffcc80; /* Naranja claro */
+            background-color: #ffcc80; /* Naranja claro (default) */
             margin-right: 5px;
-            border: 1px solid #ffa726; /* Naranja */
+            border: 1px solid #ffa726; /* Naranja (default) */
+            flex-shrink: 0;
         }
         .highlight {
              background-color: #ffe0b2; /* Naranja muy claro */
              padding: 0 2px;
              border-radius: 2px;
+             display: inline; /* Para que no rompa líneas innecesariamente */
         }
          .sub-section {
             margin-top: 8px;
             border-left: 3px solid #90a4ae; /* Borde izquierdo gris azulado */
             padding-left: 6px;
-        }
+         }
+         .sub-section:not(:last-child) {
+             margin-bottom: 8px;
+         }
         .sub-section-title {
             font-weight: bold;
             color: #546e7a; /* Gris azulado oscuro */
@@ -69,6 +78,78 @@
             text-transform: uppercase;
             margin-bottom: 2px;
         }
+        /* Estilos para la tabla de deprecated tags */
+        .deprecated-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Ayuda a controlar el ancho de las columnas */
+        }
+        .deprecated-table td {
+            border: 1px solid #ccc;
+            padding: 2px 4px;
+            vertical-align: top;
+            font-size: 0.75rem; /* Tamaño de fuente más pequeño para la tabla */
+            word-wrap: break-word; /* Rompe palabras largas */
+        }
+        .deprecated-table td:first-child {
+            width: 30%; /* Ajusta según sea necesario */
+        }
+         .deprecated-table td:nth-child(2) {
+            width: 70%; /* Ajusta según sea necesario */
+        }
+         .deprecated-table .code-tag {
+             margin-right: 5px;
+         }
+         /* Clases específicas para colores de iconos */
+        .icon-html { background-color: #ffcc80; border-color: #ffa726; } /* Naranja claro */
+        .icon-comment { background-color: #c5e1a5; border-color: #aed581; } /* Verde lima claro */
+        .icon-social { background-color: #90caf9; border-color: #64b5f6; } /* Azul claro */
+        .icon-document { background-color: #bcaaa4; border-color: #a1887f; } /* Marrón claro */
+        .icon-head { background-color: #b39ddb; border-color: #9575cd; } /* Púrpura oscuro claro */
+        .icon-interactive { background-color: #9fa8da; border-color: #7986cb; } /* Índigo claro */
+        .icon-global { background-color: #f48fb1; border-color: #f06292; } /* Rosa claro */
+        .icon-select { background-color: #ce93d8; border-color: #ba68c8; } /* Púrpura claro */
+        .icon-validation { background-color: #a5d6a7; border-color: #81c784; } /* Verde claro */
+        .icon-inline { background-color: #ffe082; border-color: #ffd54f; } /* Ámbar claro */
+        .icon-button { background-color: #80cbc4; border-color: #4db6ac; } /* Teal claro */
+        .icon-aria { background-color: #ffcc80; border-color: #ffb74d; } /* Naranja claro */
+        .icon-legend { background-color: #e0e0e0; border-color: #bdbdbd; } /* Gris claro */
+        .icon-deprecated { background-color: #fff59d; border-color: #ffee58; } /* Amarillo claro */
+        .icon-ruby { background-color: #ffab91; border-color: #ff8a65; } /* Naranja oscuro claro */
+        .icon-forms { background-color: #ef9a9a; border-color: #e57373; } /* Rojo claro */
+        .icon-input { background-color: #81d4fa; border-color: #4fc3f7; } /* Azul claro */
+        .icon-groups { background-color: #a1887f; border-color: #8d6e63; } /* Marrón */
+        .icon-text { background-color: #4dd0e1; border-color: #26c6da; } /* Cyan */
+        .icon-image { background-color: #dce775; border-color: #d4e157; } /* Lima */
+        .icon-links { background-color: #64b5f6; border-color: #42a5f5; } /* Azul */
+        .icon-edit { background-color: #ff8a65; border-color: #ff7043; } /* Naranja oscuro */
+        .icon-security { background-color: #9e9e9e; border-color: #757575; } /* Gris */
+        .icon-tables { background-color: #7986cb; border-color: #5c6bc0; } /* Índigo */
+        .icon-media { background-color: #ba68c8; border-color: #ab47bc; } /* Púrpura */
+        /* Nuevos iconos v4 */
+        .icon-embed { background-color: #f06292; border-color: #ec407a; } /* Rosa */
+        .icon-svg { background-color: #4db6ac; border-color: #26a69a; } /* Teal */
+        .icon-scripting { background-color: #ffd54f; border-color: #ffca28; } /* Ámbar */
+        .icon-svg-path { background-color: #7e57c2; border-color: #673ab7; } /* Púrpura oscuro */
+        .icon-svg-attrs { background-color: #5c6bc0; border-color: #3f51b5; } /* Índigo oscuro */
+
+        /* Estilo para SVG paths */
+        .path-command { font-weight: bold; color: #d32f2f; } /* Rojo oscuro */
+        .path-desc { margin-left: 10px; color: #555; }
+
+        /* Estilo simple para diagrama async/defer */
+        .script-timeline {
+            border-left: 2px solid #ccc;
+            padding-left: 10px;
+            margin-top: 5px;
+            font-size: 0.7rem;
+        }
+        .script-timeline div { margin-bottom: 3px; }
+        .script-html { background-color: #bbdefb; padding: 1px 3px; border-radius: 2px; display: inline-block;}
+        .script-fetch { background-color: #fff9c4; padding: 1px 3px; border-radius: 2px; display: inline-block;}
+        .script-exec { background-color: #c8e6c9; padding: 1px 3px; border-radius: 2px; display: inline-block;}
+
+
     </style>
 </head>
 <body class="p-4">
@@ -78,7 +159,7 @@
 
             <div class="space-y-4">
                 <section>
-                    <div class="section-title"><span class="icon"></span>HTML Syntax <span class="ml-auto text-xs font-normal">Tag structure</span></div>
+                    <div class="section-title"><span class="icon icon-html"></span>HTML Syntax <span class="ml-auto text-xs font-normal">Tag structure</span></div>
                     <div class="section-content">
                         <code class="block bg-gray-200 p-2 rounded text-sm">
                             &lt;<span class="code-tag">tag</span> <span class="code-attr">attribute</span>="<span class="code-value">value</span>"&gt; content &lt;/<span class="code-tag">tag</span>&gt;
@@ -87,7 +168,7 @@
                 </section>
 
                 <section>
-                    <div class="section-title"><span class="icon"></span>Document tags <span class="ml-auto text-xs font-normal">HTML main structure</span></div>
+                    <div class="section-title"><span class="icon icon-document"></span>Document tags <span class="ml-auto text-xs font-normal">HTML main structure</span></div>
                     <div class="section-content">
                         <p><code class="code-tag">&lt;!DOCTYPE html&gt;</code> HTML5 document</p>
                         <p><code class="code-tag">&lt;html&gt;</code> document content root tag</p>
@@ -97,7 +178,7 @@
                 </section>
 
                 <section>
-                    <div class="section-title"><span class="icon"></span>Global Attributes <span class="ml-auto text-xs font-normal">for all elements</span></div>
+                    <div class="section-title"><span class="icon icon-global"></span>Global Attributes <span class="ml-auto text-xs font-normal">for all elements</span></div>
                     <div class="section-content">
                         <div class="sub-section">
                              <div class="sub-section-title">DOM / STYLE ATTRIBUTES</div>
@@ -124,8 +205,8 @@
                         </div>
                          <div class="sub-section">
                              <div class="sub-section-title">HINT TO BROWSER</div>
-                              <p><code class="code-attr">enterkeyhint</code> <code class="code-value">enter|done|go|search...</code></p>
-                              <p><code class="code-attr">inputmode</code> <code class="code-value">none|text|tel|url|email...</code></p>
+                              <p><code class="code-attr">enterkeyhint</code> <code class="code-value">enter|done|go|search|next|previous|send</code> <span class="highlight">virtual keyb label</span></p>
+                              <p><code class="code-attr">inputmode</code> <code class="code-value">none|text|tel|url|email|numeric|decimal|search</code></p>
                         </div>
                          <div class="sub-section">
                              <div class="sub-section-title">MICRODATA ATTRIBUTES</div>
@@ -139,13 +220,13 @@
                 </section>
 
                  <section>
-                    <div class="section-title"><span class="icon"></span>Inline Styling <span class="ml-auto text-xs font-normal">CSS inline</span></div>
+                    <div class="section-title"><span class="icon icon-inline"></span>Inline Styling <span class="ml-auto text-xs font-normal">CSS inline</span></div>
                     <div class="section-content">
                          <div class="sub-section">
                              <div class="sub-section-title">INLINE STYLES</div>
                              <p><code class="code-tag">&lt;style&gt;</code> embed css style in a document</p>
-                             <p><code class="code-attr">title</code> set title to stylesheet set</p>
-                             <p><code class="code-attr">type</code> mime hint type for browser</p>
+                             <p class="ml-4"><code class="code-attr">title</code> set title to stylesheet set</p>
+                             <p class="ml-4"><code class="code-attr">type</code> mime hint type for browser</p>
                          </div>
                          <div class="sub-section">
                              <div class="sub-section-title">SOURCE STYLE</div>
@@ -159,7 +240,7 @@
                 </section>
 
                  <section>
-                    <div class="section-title-alt"><span class="icon"></span>CHEATSHEET LEGEND</div>
+                    <div class="section-title-alt"><span class="icon icon-legend"></span>CHEATSHEET LEGEND</div>
                     <div class="section-content">
                         <p><code class="code-tag">html tag</code> html tag <code class="code-tag">w/o close tag</code> <span class="text-red-500 line-through">obsolete</span></p>
                         <p><code class="code-attr">attribute</code> attribute <code class="code-attr">w/o value</code></p>
@@ -168,11 +249,238 @@
                     </div>
                  </section>
 
+                 <section>
+                    <div class="section-title"><span class="icon icon-forms"></span>Forms <span class="ml-auto text-xs font-normal">Forms related tags</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                            <div class="sub-section-title">MAIN ELEMENTS</div>
+                            <p><code class="code-tag">&lt;form&gt;</code> form elements collection</p>
+                            <p class="ml-4"><code class="code-attr">name</code> form name <span class="highlight">document.forms api</span></p>
+                            <p class="ml-4"><code class="code-attr">method</code> <code class="code-value">GET|POST</code> <span class="highlight">default: GET</span> send method</p>
+                            <p class="ml-4"><code class="code-attr">action</code> uri to backend form submission</p>
+                            <p class="ml-4"><code class="code-attr">accept-charset</code> <code class="code-value">enc</code> force encoding <span class="highlight">utf-8</span></p>
+                            <p class="ml-4"><code class="code-attr">autocomplete</code> <code class="code-value">on|off</code> autofill for all form</p>
+                            <p class="ml-4"><code class="code-attr">novalidate</code> bypass form validation</p>
+                            <p class="ml-4"><code class="code-attr">target</code> context place to put response</p>
+                            <p class="ml-4"><code class="code-attr">enctype</code> <code class="code-value">application/x-www-form-urlencoded | multipart/form-data | text/plain</code> encoding type</p>
+                            <p><code class="code-tag">&lt;label&gt;</code> associate element with caption</p>
+                            <p class="ml-4"><code class="code-attr">for</code> reference to <code class="code-attr">id</code> of related element</p>
+                        </div>
+                        <div class="sub-section">
+                            <div class="sub-section-title">GROUP FORMS</div>
+                            <p><code class="code-tag">&lt;fieldset&gt;</code> group of form elements</p>
+                            <p class="ml-4"><code class="code-attr">name</code> element name <span class="highlight">forms.elements api</span></p>
+                            <p class="ml-4"><code class="code-attr">form</code> associate fieldset with a form</p>
+                            <p class="ml-4"><code class="code-attr">disabled</code> avoid select this group items</p>
+                            <p><code class="code-tag">&lt;legend&gt;</code> caption text for fieldset</p>
+                        </div>
+                    </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-input"></span>Input elements <span class="ml-auto text-xs font-normal">User input types</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">USER INPUT DATA</div>
+                             <p><code class="code-tag">&lt;input&gt;</code> / <code class="code-tag">&lt;textarea&gt;</code> specific & large text</p>
+                             <p class="ml-4"><code class="code-attr">name</code> element name <span class="highlight">form.elements api</span></p>
+                             <p class="ml-4"><code class="code-attr">autocomplete</code> <code class="code-value">on|off</code> autofill for input</p>
+                             <p class="ml-4"><code class="code-attr">autofocus</code> focus input when loaded</p>
+                             <p class="ml-4"><code class="code-attr">dirname</code> submit element directionality</p>
+                             <p class="ml-4"><code class="code-attr">form</code> associate input with a form</p>
+                             <p class="ml-4"><code class="code-attr">placeholder</code> user visual hint</p>
+                         </div>
+                         <div class="sub-section">
+                              <div class="sub-section-title">INPUT SPECIFIC</div>
+                              <p><code class="code-tag">&lt;input&gt;</code> specific text input <span class="highlight">short text</span></p>
+                              <p class="ml-4"><code class="code-attr">type</code> <code class="code-value">text|hidden|search|tel|url|email|password|number|range|color|file|datetime-local|date|time|week|month|checkbox|radio|submit|image|reset|button</code></p>
+                              <p class="ml-4"><code class="code-attr">value</code> current value of input element</p>
+                              <p class="ml-4"><code class="code-attr">size</code> size of element in characters</p>
+                              <p class="ml-4"><code class="code-attr">list</code> associate with <code class="code-attr">id</code> of <code class="code-tag">&lt;datalist&gt;</code></p>
+                              <p class="ml-4"><code class="code-attr">accept</code> hint for expected file in upload</p>
+                              <p class="ml-4"><code class="code-attr">checked</code> enable in radio or checkbox</p>
+                              <p class="ml-4"><code class="code-attr">multiple</code> allow multiple values</p>
+                              <p class="ml-4"><code class="code-attr">src</code> URL or name of image button</p>
+                              <p class="ml-4"><code class="code-attr">alt</code> alternative text to image</p>
+                              <p class="ml-4"><code class="code-attr">width</code>, <code class="code-attr">height</code> image width/height size</p>
+                         </div>
+                         <div class="sub-section">
+                              <div class="sub-section-title">TEXTAREA SPECIFIC</div>
+                              <p><code class="code-tag">&lt;textarea&gt;</code> multiline text input <span class="highlight">large text</span></p>
+                              <p class="ml-4"><code class="code-attr">rows</code>, <code class="code-attr">cols</code> number of lines and columns</p>
+                              <p class="ml-4"><code class="code-attr">wrap</code> <code class="code-value">soft|hard</code> wrap text</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">ALTER FORM SUBMISSION</div>
+                             <p>
+                                <code class="code-attr">formaction</code> <code class="code-attr">formtarget</code> <code class="code-attr">formnovalidate</code>
+                                <code class="code-attr">formenctype</code> <code class="code-attr">formmethod</code>
+                             </p>
+                             <p class="ml-4">attributes to alter main form submission</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-ruby"></span>Ruby tags <span class="ml-auto text-xs font-normal">Ruby Markup tags</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">RUBY ELEMENTS</div>
+                             <p><code class="code-tag">&lt;ruby&gt;</code> ruby annotation <span class="highlight">E.Asian-like-chars</span></p>
+                             <p><code class="code-tag">&lt;rp&gt;</code> ruby fallback parenthesis wrapper</p>
+                             <p><code class="code-tag">&lt;rt&gt;</code> ruby text pronunciation, translation...</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-groups"></span>Groups tags <span class="ml-auto text-xs font-normal">Block elements</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">GENERAL GROUP TAGS</div>
+                             <p><code class="code-tag">&lt;div&gt;</code> generic division or layer <span class="highlight">block</span></p>
+                             <p><code class="code-tag">&lt;p&gt;</code> text paragraph</p>
+                             <p><code class="code-tag">&lt;hr&gt;</code> thematic break</p>
+                             <p><code class="code-tag">&lt;pre&gt;</code> preformatted text</p>
+                             <p><code class="code-tag">&lt;main&gt;</code> dominant contents</p>
+                             <p><code class="code-tag">&lt;blockquote&gt;</code> section with quote</p>
+                             <p class="ml-4"><code class="code-attr">cite</code> link to url with quotation source</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">LISTS & TERMS</div>
+                             <p><code class="code-tag">&lt;ul&gt;</code> / <code class="code-tag">&lt;ol&gt;</code> unordered & ordered list</p>
+                             <p class="ml-4"><code class="code-attr">start</code> first value of list <span class="highlight">(ol)</span></p>
+                             <p class="ml-4"><code class="code-attr">reversed</code> backwards list <span class="highlight">(ol)</span></p>
+                             <p class="ml-4"><code class="code-attr">type</code> <code class="code-value">1|A|a|I|i</code> kind of marker <span class="highlight">(ol)</span></p>
+                             <p><code class="code-tag">&lt;li&gt;</code> item from <code class="code-tag">&lt;ul&gt;</code> or <code class="code-tag">&lt;ol&gt;</code> list</p>
+                             <p class="ml-4"><code class="code-attr">value</code> ordinal value of item <span class="highlight">(ol)</span></p>
+                             <p><code class="code-tag">&lt;dl&gt;</code> description list container</p>
+                             <p><code class="code-tag">&lt;dt&gt;</code> / <code class="code-tag">&lt;dd&gt;</code> description term name & value</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">FIGURE & CAPTIONS</div>
+                             <p><code class="code-tag">&lt;figure&gt;</code> figure or concept</p>
+                             <p><code class="code-tag">&lt;figcaption&gt;</code> caption or legend for figure</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">SEMANTIC TAGS</div>
+                             <p><code class="code-tag">&lt;article&gt;</code> entity content <span class="highlight">post, comment...</span></p>
+                             <p><code class="code-tag">&lt;section&gt;</code> thematic group of content</p>
+                             <p><code class="code-tag">&lt;nav&gt;</code> section with navigation links</p>
+                             <p><code class="code-tag">&lt;aside&gt;</code> secondary content <span class="highlight">sidebar, menu</span></p>
+                             <p><code class="code-tag">&lt;h1&gt;</code>...<code class="code-tag">&lt;h6&gt;</code> heading section</p>
+                             <p><code class="code-tag">&lt;header&gt;</code> introductory header group</p>
+                             <p><code class="code-tag">&lt;footer&gt;</code> section footer group</p>
+                             <p><code class="code-tag">&lt;address&gt;</code> contact information group</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-tables"></span>Tables tags <span class="ml-auto text-xs font-normal">Tabular data</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">TABLE ELEMENTS</div>
+                             <p><code class="code-tag">&lt;table&gt;</code> table container</p>
+                             <p><code class="code-tag">&lt;caption&gt;</code> title of table <span class="highlight">optional</span></p>
+                             <p><code class="code-tag">&lt;thead&gt;</code> table header <span class="highlight">includes headers</span></p>
+                             <p><code class="code-tag">&lt;tbody&gt;</code> table body <span class="highlight">includes body data</span></p>
+                             <p><code class="code-tag">&lt;tfoot&gt;</code> table footer <span class="highlight">includes summary</span></p>
+                             <p><code class="code-tag">&lt;col&gt;</code> / <code class="code-tag">&lt;colgroup&gt;</code> col & group of columns</p>
+                             <p class="ml-4"><code class="code-attr">span</code> number of columns to span</p>
+                             <p><code class="code-tag">&lt;tr&gt;</code> table row <span class="highlight">horizontal container</span></p>
+                             <p><code class="code-tag">&lt;th&gt;</code> / <code class="code-tag">&lt;td&gt;</code> table header & table cell data</p>
+                             <p class="ml-4"><code class="code-attr">colspan</code> number of columns to span</p>
+                             <p class="ml-4"><code class="code-attr">rowspan</code> number of rows to span</p>
+                             <p class="ml-4"><code class="code-attr">headers</code> one or more <code class="code-attr">id</code> of <code class="code-tag">&lt;th&gt;</code> elements</p>
+                             <p class="ml-4"><code class="code-attr">scope</code> <code class="code-value">auto|row|col|rowgroup|colgroup</code></p>
+                             <p class="ml-4"><code class="code-attr">abbr</code> short abbreviated description <span class="highlight">(th)</span></p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">TARGET DESTINATION</div>
+                             <p><code class="code-attr">target</code> browser destination</p>
+                             <p class="ml-4"><code class="code-value">_self</code> current place <span class="highlight">same page</span></p>
+                             <p class="ml-4"><code class="code-value">_blank</code> new place <span class="highlight">new tab/page</span></p>
+                             <p class="ml-4"><code class="code-value">_parent</code> parent place <span class="highlight">else _self</span></p>
+                             <p class="ml-4"><code class="code-value">_top</code> root parent place <span class="highlight">else _self</span></p>
+                             <p class="ml-4"><code class="code-value">name</code> custom place <span class="highlight">iframe or other</span></p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-embed"></span>Embedded tags <span class="ml-auto text-xs font-normal">External content</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">EXTERNAL CONTENT FRAME</div>
+                             <p><code class="code-tag">&lt;iframe&gt;</code> embedded content</p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to url resource <span class="highlight">website, file,...</span></p>
+                             <p class="ml-4"><code class="code-attr">srcdoc</code> document content <span class="highlight">html syntax</span></p>
+                             <p class="ml-4"><code class="code-attr">name</code> name context for <code class="code-attr">target</code> attribute</p>
+                             <p class="ml-4"><code class="code-attr">loading</code> <code class="code-value">lazy</code> lazy load iframe</p>
+                             <p class="ml-4"><code class="code-attr">allowfullscreen</code> allow iframe fullscreen</p>
+                             <p class="ml-4"><code class="code-attr">allowpaymentrequest</code> allow payments</p>
+                             <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical sizes</p>
+                             <p class="ml-4"><code class="code-attr">sandbox</code> <code class="code-value">allow-forms allow-modals...</code></p>
+                             <p class="ml-6 text-xs"><span class="highlight">allow-orientation-lock allow-pointer-lock allow-popups-to-escape-sandbox allow-scripts allow-same-origin allow-presentation allow-top-navigation-by-user-activation allow-top-navigation allow-popups</span></p>
+                             <p class="ml-4"><code class="code-attr">allow</code> feature allow access to feature</p>
+                             <p class="ml-6 text-xs"><span class="highlight">ambient-light-sensor autoplay accelerometer camera display-capture document-domain encrypted-media fullscreen geolocation gyroscope magnetometer microphone midi payment picture-in-picture speaker sync-xhr usb wake-lock webauthn vr</span></p>
+                             <p class="ml-4"><code class="code-attr">referrerpolicy</code> <code class="code-value">mode</code> referer behaviour</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">LEGACY EMBED/OBJECT TAGS</div>
+                             <p><code class="code-tag">&lt;embed&gt;</code> external non-html content</p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to url resource</p>
+                             <p class="ml-4"><code class="code-attr">type</code> type of embedded resource</p>
+                             <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical sizes</p>
+                             <p><code class="code-tag">&lt;object&gt;</code> external resource <span class="highlight">multipurpose</span></p>
+                             <p class="ml-4"><code class="code-attr">data</code> link to url resource</p>
+                             <p class="ml-4"><code class="code-attr">type</code> type of embedded resource</p>
+                             <p class="ml-4"><code class="code-attr">name</code> name context for <code class="code-attr">target</code> attribute</p>
+                             <p class="ml-4"><code class="code-attr">usemap</code> name of image map to use</p>
+                             <p class="ml-4"><code class="code-attr">form</code> associates element with form</p>
+                             <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical sizes</p>
+                             <p><code class="code-tag">&lt;param&gt;</code> external resource <span class="highlight">multipurpose</span></p>
+                             <p class="ml-4"><code class="code-attr">name</code> <code class="code-attr">value</code> name & value of parameter</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">EXPERIMENTAL TAGS</div>
+                             <p><code class="code-tag">&lt;portal&gt;</code> guest embedded content <span class="highlight">~iframe</span></p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to url resource <span class="highlight">website, file,...</span></p>
+                             <p class="ml-4"><code class="code-attr">referrerpolicy</code> <code class="code-value">mode</code> referer behaviour</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-svg-path"></span>SVG paths <span class="ml-auto text-xs font-normal">Scalar Vectorial Graphics</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">POWERFUL PATHS</div>
+                             <p><code class="code-tag">&lt;path&gt;</code> define a outline of a shape</p>
+                             <p class="ml-4"><code class="code-attr">d</code> command/coords <span class="highlight">space-separated</span></p>
+                             <p class="ml-4"><code class="code-attr">pathLength</code> total length of the path</p>
+                             <div class="mt-2 text-xs">
+                                 <p><span class="path-command">M m</span> <span class="path-desc">Move to (path begins - M10,30)</span></p>
+                                 <p><span class="path-command">Z z</span> <span class="path-desc">Close path (path ends - Z)</span></p>
+                                 <p><span class="path-command">L l</span> <span class="path-desc">Line to (draw line - L90,90)</span></p>
+                                 <p><span class="path-command">H h</span> <span class="path-desc">Horiz line to (horizontal line - H40)</span></p>
+                                 <p><span class="path-command">V v</span> <span class="path-desc">Vert line to (vertical line - V20)</span></p>
+                                 <p><span class="path-command">C c</span> <span class="path-desc">Cubic Bézier (C30,90 25,10 50,10)</span></p>
+                                 <p><span class="path-command">S s</span> <span class="path-desc">Smooth C. B. (S70,90 90,90)</span></p>
+                                 <p><span class="path-command">Q q</span> <span class="path-desc">Quadratic Bézier (Q90,60 50,90)</span></p>
+                                 <p><span class="path-command">T t</span> <span class="path-desc">Smooth Q. B. (T30,0)</span></p>
+                                 <p><span class="path-command">A a</span> <span class="path-desc">Elliptical Arc (A20,20 0 0 1 50,30)</span></p>
+                             </div>
+                         </div>
+                     </div>
+                 </section>
+
             </div>
 
             <div class="space-y-4">
                  <section>
-                    <div class="section-title"><span class="icon"></span>Comment Syntax <span class="ml-auto text-xs font-normal">Dev annotations</span></div>
+                    <div class="section-title"><span class="icon icon-comment"></span>Comment Syntax <span class="ml-auto text-xs font-normal">Dev annotations</span></div>
                     <div class="section-content">
                         <code class="block bg-gray-200 p-2 rounded text-sm code-comment">
                             &lt;!-- text without effects on webpage --&gt;
@@ -181,7 +489,7 @@
                 </section>
 
                 <section>
-                    <div class="section-title"><span class="icon"></span>Head tags <span class="ml-auto text-xs font-normal">Header & document metadata</span></div>
+                    <div class="section-title"><span class="icon icon-head"></span>Head tags <span class="ml-auto text-xs font-normal">Header & document metadata</span></div>
                     <div class="section-content">
                         <div class="sub-section">
                              <div class="sub-section-title">RELATIONED DOCS</div>
@@ -197,7 +505,7 @@
                                  <div><code class="code-value">author</code></div><div>link to author URL</div>
                                  <div><code class="code-value">help</code></div><div>link to help URL</div>
                                  <div><code class="code-value">icon</code></div><div>link to favicon URL (tab icon)</div>
-                                 <div><code class="code-value">license</code></div><div>fetch module map</div>
+                                 <div><code class="code-value">license</code></div><div>link to license URL</div>
                                  <div><code class="code-value">pingback</code></div><div>link to pingback server</div>
                                  <div><code class="code-value">search</code></div><div>link to search page url</div>
                                  <div><code class="code-value">stylesheet</code></div><div>Imports a css style sheet</div>
@@ -223,7 +531,7 @@
                                  <div><code class="code-value">modulepreload</code></div><div>fetch module map</div>
                                  <div><code class="code-value">prerender</code></div><div>background render page</div>
                              </div>
-                             <p class="ml-4"><code class="code-attr">as</code> <code class="code-value">script|font|image|audio|video|fetch...</code></p>
+                             <p class="ml-4"><code class="code-attr">as</code> <code class="code-value">script|font|image|audio|video|fetch|document|embed|object|style|track|worker</code></p>
                          </div>
                          <div class="sub-section">
                              <div class="sub-section-title">DOCUMENT METADATA</div>
@@ -262,11 +570,249 @@
                          </div>
                     </div>
                 </section>
+
+                <section>
+                    <div class="section-title"><span class="icon icon-select"></span>Select data tags <span class="ml-auto text-xs font-normal">Interactive combo</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                            <div class="sub-section-title">SELECT ELEMENTS</div>
+                            <p><code class="code-tag">&lt;select&gt;</code> form elements collection</p>
+                            <p class="ml-4"><code class="code-attr">name</code> form name <span class="highlight">document.forms api</span></p>
+                            <p class="ml-4"><code class="code-attr">form</code> associate input with a form</p>
+                            <p class="ml-4"><code class="code-attr">size</code> size of element in characters</p>
+                            <p class="ml-4"><code class="code-attr">autocomplete</code> <code class="code-value">on|off</code> autofill for input</p>
+                            <p class="ml-4"><code class="code-attr">autofocus</code> focus input when loaded</p>
+                            <p class="ml-4"><code class="code-attr">disabled</code> avoid press button</p>
+                            <p class="ml-4"><code class="code-attr">required</code> required field <span class="highlight">default: optional</span></p>
+                            <p class="ml-4"><code class="code-attr">multiple</code> allow select multiple values</p>
+                            <p><code class="code-tag">&lt;datalist&gt;</code> predefined and open data list</p>
+                        </div>
+                        <div class="sub-section">
+                            <div class="sub-section-title">OPTIONS</div>
+                            <p><code class="code-tag">&lt;option&gt;</code> item from <code class="code-tag">&lt;select&gt;</code> or <code class="code-tag">&lt;datalist&gt;</code></p>
+                            <p class="ml-4"><code class="code-attr">label</code> user-visible text instead content</p>
+                            <p class="ml-4"><code class="code-attr">value</code> item value for form submit</p>
+                            <p class="ml-4"><code class="code-attr">selected</code> option selected by default</p>
+                            <p class="ml-4"><code class="code-attr">disabled</code> avoid select this item option</p>
+                            <p><code class="code-tag">&lt;optgroup&gt;</code> group of option</p>
+                            <p class="ml-4"><code class="code-attr">label</code> user-visible group text</p>
+                            <p class="ml-4"><code class="code-attr">disabled</code> avoid select this items</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title"><span class="icon icon-button"></span>Generic Button <span class="ml-auto text-xs font-normal">HTML Button</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                            <div class="sub-section-title">HTML GENERIC BUTTON</div>
+                            <p><code class="code-tag">&lt;button&gt;</code> generic button container</p>
+                            <p class="ml-4"><code class="code-attr">name</code> element name <span class="highlight">form.elements api</span></p>
+                            <p class="ml-4"><code class="code-attr">type</code> <code class="code-value">submit|reset|button</code> button type</p>
+                            <p class="ml-4"><code class="code-attr">value</code> button value for form submission</p>
+                            <p class="ml-4"><code class="code-attr">form</code> associate input with a form</p>
+                            <p class="ml-4"><code class="code-attr">autofocus</code> focus button when loaded</p>
+                            <p class="ml-4"><code class="code-attr">disabled</code> avoid press button</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title"><span class="icon icon-deprecated"></span>Deprecated tags <span class="ml-auto text-xs font-normal">Obsolete elements</span></div>
+                    <div class="section-content">
+                        <table class="deprecated-table text-xs">
+                            <thead>
+                                <tr>
+                                    <th>DEPRECATED TAG</th>
+                                    <th>RECOMMENDED TAG / INFO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code class="code-tag">&lt;applet&gt;</code></td><td>java widgets <code class="code-tag">&lt;embed&gt;</code> <code class="code-tag">&lt;object&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;acronym&gt;</code></td><td>abbreviation <code class="code-tag">&lt;abbr&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;basefont&gt;</code></td><td>main font <span class="highlight">use CSS instead</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;bgsound&gt;</code></td><td>background sound <code class="code-tag">&lt;audio&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;big&gt;</code></td><td>bigger text <span class="highlight">use CSS font-size</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;blink&gt;</code></td><td>flicker text <span class="highlight">use CSS animation</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;center&gt;</code></td><td>center text <span class="highlight">use CSS text-align</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;dir&gt;</code></td><td>directory list <span class="highlight">use lists instead &lt;ul&gt;</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;font&gt;</code></td><td>set font features <span class="highlight">use CSS instead</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;frame&gt;</code> <code class="code-tag">&lt;frameset&gt;</code></td><td>frames <code class="code-tag">&lt;iframe&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;isindex&gt;</code></td><td>search in page <code class="code-tag">&lt;input&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;keygen&gt;</code></td><td>keypair gen <span class="highlight">use webcrypto API</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;listing&gt;</code></td><td>preformatted text <code class="code-tag">&lt;pre&gt;</code> <code class="code-tag">&lt;code&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;marquee&gt;</code></td><td>move text <span class="highlight">use CSS animation</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;menuitem&gt;</code></td><td>context menu <span class="highlight">no supported</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;multicol&gt;</code></td><td>col layout <span class="highlight">use CSS columns</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;nobr&gt;</code></td><td>no break <span class="highlight">use CSS instead</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;noembed&gt;</code></td><td>no embed fallback <code class="code-tag">&lt;object&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;noframes&gt;</code></td><td>frames fallback <span class="highlight">no supported</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;plaintext&gt;</code></td><td>plain text fragment <code class="code-tag">&lt;pre&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;spacer&gt;</code></td><td>spacers whitespace <span class="highlight">use CSS instead</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;strike&gt;</code></td><td>strikethrough text <code class="code-tag">&lt;s&gt;</code> <code class="code-tag">&lt;del&gt;</code></td></tr>
+                                <tr><td><code class="code-tag">&lt;tt&gt;</code></td><td>teletype text <span class="highlight">use CSS instead</span></td></tr>
+                                <tr><td><code class="code-tag">&lt;xmp&gt;</code></td><td>code block <span class="highlight">use &lt;pre&gt; &lt;code&gt;</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title"><span class="icon icon-text"></span>Text tags <span class="ml-auto text-xs font-normal">Inline elements</span></div>
+                    <div class="section-content">
+                        <div class="sub-section">
+                            <div class="sub-section-title">TEXT SEMANTIC TAGS</div>
+                            <p><code class="code-tag">&lt;em&gt;</code> emphatized text <span class="highlight">replace &lt;i&gt;</span></p>
+                            <p><code class="code-tag">&lt;strong&gt;</code> important text <span class="highlight">replace &lt;b&gt;</span></p>
+                            <p><code class="code-tag">&lt;mark&gt;</code> highlight text <span class="highlight">replace &lt;u&gt;</span></p>
+                            <p><code class="code-tag">&lt;i&gt;</code> alternate voice / mood <span class="highlight">legacy tag</span></p>
+                            <p><code class="code-tag">&lt;span&gt;</code> w/o extra purposes <span class="highlight">legacy tag</span></p>
+                            <p><code class="code-tag">&lt;b&gt;</code> non-textual data span <span class="highlight">legacy tag</span></p>
+                            <p><code class="code-tag">&lt;sub&gt;</code> / <code class="code-tag">&lt;sup&gt;</code> subscript and superscript</p>
+                            <p><code class="code-tag">&lt;small&gt;</code> side comments <span class="highlight">small print</span></p>
+                            <p><code class="code-tag">&lt;var&gt;</code> math or programming variable</p>
+                            <p><code class="code-tag">&lt;samp&gt;</code> sample from computing system</p>
+                            <p><code class="code-tag">&lt;kbd&gt;</code> user input (<span class="highlight">keyboard shortcut</span>)</p>
+                            <p><code class="code-tag">&lt;dfn&gt;</code> defining instance of a term</p>
+                            <p class="ml-4"><code class="code-attr">title</code> full term <span class="highlight">optional</span></p>
+                            <p><code class="code-tag">&lt;abbr&gt;</code> abbreviation or acronym</p>
+                            <p class="ml-4"><code class="code-attr">title</code> expansion of abbreviation <span class="highlight">optional</span></p>
+                            <p><code class="code-tag">&lt;cite&gt;</code> title of a work <span class="highlight">book, film, song...</span></p>
+                            <p><code class="code-tag">&lt;q&gt;</code> quoted group from another source</p>
+                            <p class="ml-4"><code class="code-attr">cite</code> link to source url <span class="highlight">optional</span></p>
+                            <p><code class="code-tag">&lt;br&gt;</code> line break <span class="highlight">visual enter</span></p>
+                            <p><code class="code-tag">&lt;wbr&gt;</code> line break opportunity <span class="highlight">long words</span></p>
+                            <p><code class="code-tag">&lt;s&gt;</code> no longer accurate/relevant <span class="highlight">strike text</span></p>
+                            <p><code class="code-tag">&lt;data&gt;</code> associate machine-data to text</p>
+                            <p class="ml-4"><code class="code-attr">value</code> machine-readable value</p>
+                            <p><code class="code-tag">&lt;time&gt;</code> associate machine-date to date</p>
+                            <p class="ml-4"><code class="code-attr">datetime</code> machine-readable date-time</p>
+                            <p><code class="code-tag">&lt;code&gt;</code> fragment of computer code</p>
+                        </div>
+                    </div>
+                </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-links"></span>Hyperlinks <span class="ml-auto text-xs font-normal">Link to another resource</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">HYPERLINKS & AREA MAP</div>
+                             <p><code class="code-tag">&lt;a&gt;</code> / <code class="code-tag">&lt;area&gt;</code> hyperlink / image map area</p>
+                             <p class="ml-4"><code class="code-attr">href</code> link to url or filename</p>
+                             <p class="ml-4"><code class="code-attr">hreflang</code> <code class="code-value">code</code> doc language <span class="highlight">en, es...</span></p>
+                             <p class="ml-4"><code class="code-attr">download</code> download name <span class="highlight">empty valid</span></p>
+                             <p class="ml-4"><code class="code-attr">rel</code> <code class="code-value">alternate author bookmark external help license prev next search tag nofollow noopener noreferrer</code></p>
+                             <p class="ml-4"><code class="code-attr">target</code> context place to open link</p>
+                             <p class="ml-4"><code class="code-attr">ping</code> url list space-separated to ping</p>
+                             <p class="ml-4"><code class="code-attr">referrerpolicy</code> <code class="code-value">mode</code> referer behaviour</p>
+                             <p class="ml-4"><code class="code-attr">shape</code> <code class="code-value">rect|circle|poly|default</code> <span class="highlight">(area)</span></p>
+                             <p class="ml-4"><code class="code-attr">coords</code> coords list for shape <span class="highlight">(area)</span></p>
+                             <p class="ml-4"><code class="code-attr">alt</code> replacement text when no images <span class="highlight">(area)</span></p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-edit"></span>Edit tags <span class="ml-auto text-xs font-normal">Edit elements</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">TEXT SEMANTIC TAGS</div>
+                             <p><code class="code-tag">&lt;ins&gt;</code> / <code class="code-tag">&lt;del&gt;</code> addition or removal from doc</p>
+                             <p class="ml-4"><code class="code-attr">cite</code> link to source quotation <span class="highlight">optional</span></p>
+                             <p class="ml-4"><code class="code-attr">datetime</code> date/time of change <span class="highlight">optional</span></p>
+                         </div>
+                     </div>
+                 </section>
+
+                  <section>
+                      <div class="section-title"><span class="icon icon-security"></span>Security & Privacy <span class="ml-auto text-xs font-normal">Edit elements</span></div>
+                      <div class="section-content">
+                          <div class="sub-section">
+                              <div class="sub-section-title">POLICIES</div>
+                              <p><code class="code-attr">crossorigin</code> CORS support</p>
+                              <p class="ml-4"><code class="code-value">anonymous|use-credentials</code></p>
+                              <p><code class="code-attr">referrerpolicy</code> set how referer works</p>
+                              <p class="ml-4"><code class="code-value">no-referrer|no-referrer-when-downgrade|same-origin|origin|strict-origin|unsafe-url|origin-when-cross-origin|strict-origin-when-cross-origin</code></p>
+                          </div>
+                      </div>
+                  </section>
+
+                  <section>
+                      <div class="section-title"><span class="icon icon-svg"></span>SVG tags <span class="ml-auto text-xs font-normal">Scalar Vectorial Graphics</span></div>
+                      <div class="section-content">
+                          <div class="sub-section">
+                              <div class="sub-section-title">MAIN TAGS</div>
+                              <p><code class="code-tag">&lt;svg&gt;</code> svg container <span class="highlight">standalone svg</span></p>
+                              <p class="ml-4"><code class="code-attr">viewBox</code> <code class="code-value">minx miny width height</code></p>
+                              <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> viewport size</p>
+                              <p class="ml-4"><code class="code-attr">preserveAspectRatio</code> <code class="code-value">align option</code></p>
+                              <p class="ml-6"><code class="code-value">align: none x{Min|Mid|Max}Y{Min|Mid|Max}</code></p>
+                              <p class="ml-6"><code class="code-value">option: meet|slice</code></p>
+                              <p><code class="code-tag">&lt;g&gt;</code> related group container</p>
+                              <p><code class="code-tag">&lt;title&gt;</code> short text title <span class="highlight">alternative</span></p>
+                              <p><code class="code-tag">&lt;desc&gt;</code> detailed textual information</p>
+                              <p><code class="code-tag">&lt;metadata&gt;</code> metadata elems. container</p>
+                          </div>
+                          <div class="sub-section">
+                              <div class="sub-section-title">CONTENT FOR SVG</div>
+                              <p><code class="code-tag">&lt;defs&gt;</code> referenced elements container</p>
+                              <p><code class="code-tag">&lt;symbol&gt;</code> set reuse template <span class="highlight">no render</span></p>
+                              <p><code class="code-tag">&lt;use&gt;</code> reference another element <span class="highlight">reuse</span></p>
+                              <p class="ml-4"><code class="code-attr">href</code> url link to be cloned for rendering</p>
+                              <p><code class="code-tag">&lt;switch&gt;</code> reference another element</p>
+                              <p class="ml-4"><span class="highlight">direct child of &lt;switch&gt;</span></p>
+                              <p class="ml-4"><code class="code-attr">systemLanguage</code> <code class="code-value">code</code></p>
+                          </div>
+                          <div class="sub-section">
+                              <div class="sub-section-title">BASIC SHAPES</div>
+                              <p><code class="code-tag">&lt;rect&gt;</code> define a rectangle</p>
+                              <p class="ml-4"><code class="code-attr">x</code> <code class="code-attr">y</code> horizontal & vertical position</p>
+                              <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical sizes</p>
+                              <p class="ml-4"><code class="code-attr">rx</code> <code class="code-attr">ry</code> horizontal & vertical radius</p>
+                              <p><code class="code-tag">&lt;circle&gt;</code> define a circle</p>
+                              <p class="ml-4"><code class="code-attr">cx</code> <code class="code-attr">cy</code> horizontal & vertical center coord</p>
+                              <p class="ml-4"><code class="code-attr">r</code> radius of the circle</p>
+                              <p><code class="code-tag">&lt;ellipse&gt;</code> define a ellipse</p>
+                              <p class="ml-4"><code class="code-attr">cx</code> <code class="code-attr">cy</code> horizontal & vertical center coord</p>
+                              <p class="ml-4"><code class="code-attr">rx</code> <code class="code-attr">ry</code> horizontal & vertical radius</p>
+                              <p><code class="code-tag">&lt;line&gt;</code> define a line segment</p>
+                              <p class="ml-4"><code class="code-attr">x1</code> <code class="code-attr">y1</code> start point (x,y) of line segment</p>
+                              <p class="ml-4"><code class="code-attr">x2</code> <code class="code-attr">y2</code> end point (x,y) of line segment</p>
+                              <p class="ml-4"><code class="code-attr">pathLength</code> total length of the path</p>
+                              <p><code class="code-tag">&lt;polyline&gt;</code> / <code class="code-tag">&lt;polygon&gt;</code> line / closed shape</p>
+                              <p class="ml-4"><code class="code-attr">points</code> set of coords <span class="highlight">space-separated</span></p>
+                              <p class="ml-4"><code class="code-attr">pathLength</code> total length of the path</p>
+                          </div>
+                          <div class="sub-section">
+                              <div class="sub-section-title">TEXT & IMAGE ELEMENTS</div>
+                              <p><code class="code-tag">&lt;text&gt;</code> / <code class="code-tag">&lt;tspan&gt;</code> text layer & text container</p>
+                              <p class="ml-4"><code class="code-attr">x</code> <code class="code-attr">y</code> start position of text</p>
+                              <p class="ml-4"><code class="code-attr">dx</code> <code class="code-attr">dy</code> relative position of descendant</p>
+                              <p class="ml-4"><code class="code-attr">lengthAdjust</code> <code class="code-value">spacing|spacingAndGlyphs</code></p>
+                              <p class="ml-4"><code class="code-attr">rotate</code> <code class="code-value">number</code> rotate degrees per glyph</p>
+                              <p class="ml-4"><code class="code-attr">textLength</code> <code class="code-value">number</code> length per glyph</p>
+                              <p><code class="code-tag">&lt;textPath&gt;</code> put text on path</p>
+                              <p class="ml-4"><code class="code-attr">path</code> equivalent of <code class="code-attr">d</code> attribute <code class="code-tag">&lt;path&gt;</code></p>
+                              <p class="ml-4"><code class="code-attr">href</code> url reference to path</p>
+                              <p class="ml-4"><code class="code-attr">startOffset</code> <code class="code-value">length</code> offset from start path</p>
+                              <p class="ml-4"><code class="code-attr">method</code> <code class="code-value">align|stretch</code> how render glyph</p>
+                              <p class="ml-4"><code class="code-attr">spacing</code> <code class="code-value">exact|auto</code> space between glyph</p>
+                              <p class="ml-4"><code class="code-attr">side</code> <code class="code-value">left|right</code> side of the path to render</p>
+                              <p class="ml-4"><code class="code-attr">lengthAdjust</code> <code class="code-value">spacing|spacingAndGlyphs</code></p>
+                              <p class="ml-4"><code class="code-attr">textLength</code> <code class="code-value">number</code> length per glyph</p>
+                              <p><code class="code-tag">&lt;image&gt;</code> set reference to image</p>
+                              <p class="ml-4"><code class="code-attr">href</code> url link to image to rendering</p>
+                              <p class="ml-4"><code class="code-attr">preserveAspectRatio</code> <code class="code-value">align option</code></p>
+                              <p class="ml-4"><code class="code-attr">crossorigin</code> CORS support</p>
+                          </div>
+                      </div>
+                  </section>
+
             </div>
 
             <div class="space-y-4">
                  <section>
-                    <div class="section-title-alt"><span class="icon"></span>Social metadata <span class="ml-auto text-xs font-normal">For social networks</span></div>
+                    <div class="section-title-alt"><span class="icon icon-social"></span>Social metadata <span class="ml-auto text-xs font-normal">For social networks</span></div>
                     <div class="section-content">
                         <div class="sub-section">
                              <div class="sub-section-title">FACEBOOK OPEN GRAPH</div>
@@ -338,13 +884,220 @@
                          </div>
                     </div>
                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-interactive"></span>Interactive tags <span class="ml-auto text-xs font-normal">Other elements</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">OTHER FORM ELEMENTS</div>
+                             <p><code class="code-tag">&lt;output&gt;</code> result of calculation</p>
+                             <p class="ml-4"><code class="code-attr">name</code> element name <span class="highlight">forms.elements api</span></p>
+                             <p class="ml-4"><code class="code-attr">form</code> associate input with a form</p>
+                             <p class="ml-4"><code class="code-attr">for</code> associate result to other element</p>
+                             <p><code class="code-tag">&lt;progress&gt;</code> show a bar progress</p>
+                             <p class="ml-4"><code class="code-attr">value</code> current value of bar progress</p>
+                             <p class="ml-4"><code class="code-attr">max</code> max value of bar progress</p>
+                             <p><code class="code-tag">&lt;meter&gt;</code> show a known range meter</p>
+                             <p class="ml-4"><code class="code-attr">value</code> current value of meter</p>
+                             <p class="ml-4"><code class="code-attr">low</code> limit of low range</p>
+                             <p class="ml-4"><code class="code-attr">high</code> limit of high range</p>
+                             <p class="ml-4"><code class="code-attr">min</code> lower bound of range</p>
+                             <p class="ml-4"><code class="code-attr">max</code> upper bound of range</p>
+                             <p class="ml-4"><code class="code-attr">optimum</code> optimum value in gauge</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">OTHER INTERACTIVE ELEMENTS</div>
+                             <p><code class="code-tag">&lt;details&gt;</code> disclosure widget <span class="highlight">html accordion</span></p>
+                             <p class="ml-4"><code class="code-attr">open</code> keep accordion opened</p>
+                             <p><code class="code-tag">&lt;summary&gt;</code> caption or title for <code class="code-tag">&lt;details&gt;</code></p>
+                             <p><code class="code-tag">&lt;dialog&gt;</code> window box container <span class="highlight">dialog box</span></p>
+                             <p class="ml-4"><code class="code-attr">open</code> keep dialog opened</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-validation"></span>Validations <span class="ml-auto text-xs font-normal">HTML validations</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">USER INPUT DATA</div>
+                             <p><code class="code-attr">minlength</code> <code class="code-attr">maxlength</code> min/max length <span class="highlight">INPUT TEXTAREA</span></p>
+                             <p><code class="code-attr">required</code> required field <span class="highlight">default: optional</span></p>
+                             <p><code class="code-attr">disabled</code> avoid edit field <span class="highlight">not send</span></p>
+                             <p><code class="code-attr">readonly</code> avoid edit field <span class="highlight">send</span></p>
+                             <p><code class="code-attr">min</code> <code class="code-attr">max</code> min/max value <span class="highlight">number INPUT</span></p>
+                             <p><code class="code-attr">step</code> granularity step between values <span class="highlight">INPUT</span></p>
+                             <p><code class="code-attr">pattern</code> pattern for text validation <span class="highlight">INPUT</span></p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-aria"></span>ARIA Attributes <span class="ml-auto text-xs font-normal">Accesible elements</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">ACCESSIBLE RICH INTERNET APPLICATIONS</div>
+                             <p><code class="code-attr">role</code> specify accessible role for element</p>
+                             <p class="ml-4"><span class="highlight">complementary list listitem main navigation region tab alert application article banner button cell checkbox contentinfo dialog document feed figure form grid gridcell heading img listbox row rowgroup search switch table tabpanel textbox timer</span></p>
+                             <p><code class="code-attr">aria-checked</code> <code class="code-value">true|false|mixed</code></p>
+                             <p><code class="code-attr">aria-selected</code> set current state</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">LABELS</div>
+                             <p><code class="code-attr">aria-label</code> specify a string as label</p>
+                             <p><code class="code-attr">aria-labelledby</code> specify <code class="code-attr">id</code> as label elem</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">RELATIONSHIPS</div>
+                             <p><code class="code-attr">aria-owns</code> set <code class="code-attr">id</code> element as child</p>
+                             <p><code class="code-attr">aria-activedescendant</code> set <code class="code-attr">id</code> as active</p>
+                             <p><code class="code-attr">aria-describedby</code> set <code class="code-attr">id</code> as description</p>
+                             <p><code class="code-attr">aria-posinset</code> specify position in set</p>
+                             <p><code class="code-attr">aria-setsize</code> specify size of set</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-image"></span>Image tags <span class="ml-auto text-xs font-normal">Picture content</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">IMAGES</div>
+                             <p class="text-xs"><span class="highlight">JPG PNG SVG WEBP AVIF JPGXL APNG GIF</span></p>
+                             <p><code class="code-tag">&lt;img&gt;</code> image <span class="highlight">simple or legacy fallback</span></p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to url image source <span class="highlight">required</span></p>
+                             <p class="ml-4"><code class="code-attr">alt</code> alternative text if no image <span class="highlight">required</span></p>
+                             <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical size</p>
+                             <p class="ml-4"><code class="code-attr">loading</code> set lazy loading strategy</p>
+                             <p class="ml-6"><code class="code-value">lazy</code> candidate for lazy loading</p>
+                             <p class="ml-6"><code class="code-value">eager</code> load right away</p>
+                             <p class="ml-6"><code class="code-value">auto</code> browser decides</p>
+                             <p class="ml-4"><code class="code-attr">usemap</code> name of image map to use</p>
+                             <p class="ml-4"><code class="code-attr">ismap</code> image is part of server-side map</p>
+                             <p class="ml-4"><code class="code-attr">decoding</code> <code class="code-value">sync|async|auto</code> hint to decode</p>
+                             <p><code class="code-tag">&lt;map&gt;</code> image map <span class="highlight">used w/ &lt;area&gt;</span></p>
+                             <p class="ml-4"><code class="code-attr">name</code> imagemap used in <code class="code-attr">usemap</code></p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">NEXT-GEN IMAGES</div>
+                             <p><code class="code-tag">&lt;picture&gt;</code> multiple image container</p>
+                             <p><code class="code-tag">&lt;source&gt;</code> new alternative source image</p>
+                             <p class="ml-4"><code class="code-attr">media</code> media query of resource media</p>
+                             <p class="ml-4"><code class="code-attr">type</code> MIME type <span class="highlight">optional</span></p>
+                             <p class="ml-4"><code class="code-attr">srcset</code> image list candidates <span class="highlight">comma-sep</span></p>
+                             <p class="ml-6"><span class="highlight">width: a1.jpg 300w, a2.jpg 600w...</span></p>
+                             <p class="ml-6"><span class="highlight">density: b1.jpg 1x, b2.jpg 2x...</span></p>
+                             <p class="ml-4"><code class="code-attr">sizes</code> final rendered width list <span class="highlight">(max-width: 600px) 640w...</span></p>
+
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-media"></span>Multimedia tags</div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">VIDEO OR AUDIO CONTAINER ELEMENTS</div>
+                             <p class="text-xs"><span class="highlight">VIDEO: MP4 WEBM OGV HEVC AVI</span></p>
+                             <p class="text-xs"><span class="highlight">AUDIO: MP3 AAC OGG OPUS FLAC WAV</span></p>
+                             <p><code class="code-tag">&lt;video&gt;</code> / <code class="code-tag">&lt;audio&gt;</code> media container</p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to url video/audio source</p>
+                             <p class="ml-4"><code class="code-attr">preload</code> hints how much buffering needs</p>
+                              <p class="ml-6"><code class="code-value">auto</code> browser decides</p>
+                              <p class="ml-6"><code class="code-value">metadata</code> fetch metadata only</p>
+                              <p class="ml-6"><code class="code-value">none</code> save bandwidth and no download</p>
+                             <p class="ml-4"><code class="code-attr">autoplay</code> autoplay <span class="highlight">only if user interact / muted</span></p>
+                             <p class="ml-4"><code class="code-attr">loop</code> restart when finished</p>
+                             <p class="ml-4"><code class="code-attr">muted</code> silence media by default</p>
+                             <p class="ml-4"><code class="code-attr">controls</code> show play, pause... controls</p>
+                             <p class="ml-4"><code class="code-attr">poster</code> cover image prior to playback <span class="highlight">(video)</span></p>
+                             <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical size <span class="highlight">(video)</span></p>
+                             <p class="ml-4"><code class="code-attr">playsinline</code> browser try play video inline <span class="highlight">(video)</span></p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">VIDEO OR AUDIO CHILDREN ELEMENT</div>
+                             <p><code class="code-tag">&lt;source&gt;</code> new alternative source media</p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to uri media source</p>
+                             <p class="ml-4"><code class="code-attr">type</code> MIME type <span class="highlight">video/mp4; codecs=...</span></p>
+                             <p><code class="code-tag">&lt;track&gt;</code> external subtitles or tracks</p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to url subtitle resource</p>
+                             <p class="ml-4"><code class="code-attr">srclang</code> language of the text track</p>
+                             <p class="ml-4"><code class="code-attr">label</code> user-visible name of the text track</p>
+                             <p class="ml-4"><code class="code-attr">kind</code> <code class="code-value">subtitles|captions|descriptions|chapters|metadata</code></p>
+                             <p class="ml-4"><code class="code-attr">default</code> set default enabled track</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-scripting"></span>Scripting tags <span class="ml-auto text-xs font-normal">Javascript elements</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">SCRIPTING ELEMENTS</div>
+                             <p><code class="code-tag">&lt;script&gt;</code> include dynamic script</p>
+                             <p class="ml-4"><code class="code-attr">src</code> link to script.js <span class="highlight">instead inline script</span></p>
+                             <p class="ml-4"><code class="code-attr">type</code> <span class="highlight">default: text/javascript</span></p>
+                             <p class="ml-6"><code class="code-value">text/javascript</code> javascript file</p>
+                             <p class="ml-6"><code class="code-value">application/json</code> JSON data block <span class="highlight">file.json</span></p>
+                             <p class="ml-6"><code class="code-value">module</code> javascript module <span class="highlight">module.mjs</span></p>
+                             <p class="ml-4"><code class="code-attr">nomodule</code> fallback for old browsers</p>
+                             <p class="ml-4"><code class="code-attr">defer</code> defer script execution</p>
+                             <p class="ml-4"><code class="code-attr">async</code> exec script when available</p>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">SECURITY & PRIVACY</div>
+                             <p class="ml-4"><code class="code-attr">referrerpolicy</code> <code class="code-value">mode</code> referer behaviour</p>
+                             <p class="ml-4"><code class="code-attr">crossorigin</code> <code class="code-value">mode</code> CORS support</p>
+                             <p class="ml-4"><code class="code-attr">integrity</code> verify integrity hash of file</p>
+                         </div>
+                          <div class="sub-section">
+                             <div class="sub-section-title">HTML PARSE / FETCH / EXEC SCRIPTS</div>
+                             <div class="script-timeline">
+                                 <div><strong>NORMAL:</strong> <span class="script-html">HTML</span>|<span class="script-fetch">Fetch</span>|<span class="script-exec">Exec</span>|--- <span class="script-html">HTML Cont.</span> ---|</div>
+                                 <div><strong>DEFER:</strong> &nbsp;<span class="script-html">HTML</span>----------|<span class="script-fetch">Fetch</span>|--- <span class="script-html">HTML Cont.</span> ---|<span class="script-exec">Exec</span>|</div>
+                                 <div><strong>ASYNC:</strong> &nbsp;<span class="script-html">HTML</span>|<span class="script-fetch">Fetch</span>|<span class="script-exec">Exec</span>|--- <span class="script-html">HTML Cont.</span> ---|</div>
+                                 <div>(Simplified representation)</div>
+                             </div>
+                         </div>
+                         <div class="sub-section">
+                             <div class="sub-section-title">OTHER SCRIPTING TAGS</div>
+                             <p><code class="code-tag">&lt;noscript&gt;</code> show if no scripting enabled</p>
+                             <p><code class="code-tag">&lt;template&gt;</code> inert html fragments to clone</p>
+                             <p><code class="code-tag">&lt;slot&gt;</code> create separate DOM trees</p>
+                              <p class="ml-4"><code class="code-attr">name</code> name of shadow tree slot</p>
+                             <p><code class="code-tag">&lt;canvas&gt;</code> rendering graphs, art, etc...</p>
+                             <p class="ml-4"><code class="code-attr">width</code> <code class="code-attr">height</code> horizontal & vertical size</p>
+                             <p><code class="code-tag">&lt;custom-elem&gt;</code> user custom element tag</p>
+                         </div>
+                     </div>
+                 </section>
+
+                 <section>
+                     <div class="section-title"><span class="icon icon-svg-attrs"></span>SVG Attrs <span class="ml-auto text-xs font-normal">Style SVG attributes</span></div>
+                     <div class="section-content">
+                         <div class="sub-section">
+                             <div class="sub-section-title">STYLE SVG ATTRIBUTES</div>
+                             <p><code class="code-attr">fill</code> <code class="code-value">black|color</code> fills shape with a color</p>
+                             <p><code class="code-attr">fill-rule</code> <code class="code-value">nonzero|evenodd</code> algorithm inside</p>
+                             <p><code class="code-attr">fill-opacity</code> <code class="code-value">1|opacity</code> alpha channel</p>
+                             <p><code class="code-attr">stroke</code> <code class="code-value">none|color</code> set color line</p>
+                             <p><code class="code-attr">stroke-width</code> <code class="code-value">1|width</code> set width line</p>
+                             <p><code class="code-attr">stroke-opacity</code> <code class="code-value">1|opacity</code> alpha channel</p>
+                             <p><code class="code-attr">stroke-linecap</code> <code class="code-value">butt|round|square</code> limit type</p>
+                             <p><code class="code-attr">stroke-linejoin</code> <code class="code-value">miter|miter-clip|round|bevel|arcs</code></p>
+                             <p><code class="code-attr">stroke-miterlimit</code> <code class="code-value">4|number</code> limit on ratio</p>
+                             <p><code class="code-attr">stroke-dasharray</code> <code class="code-value">none|number array</code> pattern</p>
+                             <p><code class="code-attr">stroke-dashoffset</code> <code class="code-value">0|number</code> array offset</p>
+                             <p><code class="code-attr">transform</code> css transform apply transform</p>
+                             <p><code class="code-attr">class</code> <code class="code-attr">id</code> <code class="code-attr">style</code> html attributes inherit</p>
+                         </div>
+                     </div>
+                 </section>
+
                  <div class="text-right mt-4 pr-2">
                     <span class="text-lg font-bold text-gray-700">Emezeta.com</span>
                  </div>
             </div>
 
-        </div>
-    </div>
-
-</body>
+        </div> </div> </body>
 </html>
